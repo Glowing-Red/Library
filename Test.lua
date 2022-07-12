@@ -1,4 +1,4 @@
-local Forums = {} ---
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -1220,11 +1220,17 @@ function Forums.new(newName, Themesequence)
                 }):Play()
             end)
 
-            game.UserInputService.InputBegan:Connect(function(key)
-                if key.KeyCode == Enum.KeyCode[oldKey] then
+            local function IsOldKey()
+                return UserInputService:IsKeyDown(Enum.KeyCode[oldKey])
+            end
+
+            local function CheckKey(input, gameProcessedEvent)
+                if IsKey() then
                     pcall(callback)
                 end
-            end)
+            end
+
+            UserInputService.InputBegan:Connect(CheckKey)
 
             function KeyFunctions:Update(newKey)
                 if currentKey.Text ~= newKey.Name then
