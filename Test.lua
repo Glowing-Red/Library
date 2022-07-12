@@ -1,4 +1,4 @@
-local Forums = {} --
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -105,7 +105,6 @@ function Forums.new(newName)
     local UIListLayout = Instance.new("UIListLayout")
     local UIListLayout_2 = Instance.new("UIListLayout")
 
-    Forums:DraggingEnabled(headerContent, shadow)
     Forums:DraggingEnabled(headerContent, Content)
     
     UIListLayout.Parent = Main
