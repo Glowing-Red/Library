@@ -1,3 +1,4 @@
+
 local Forums = {}
 local minimized = false
 
@@ -1623,6 +1624,74 @@ function Forums.new(newName, Themesequence)
             UIGradient.Color = getgenv().ThemeSequence
             UIGradient.Rotation = 180
             UIGradient.Parent = seperator
+        end
+        function fElements:NewLabel(title)
+            local LabelFunctions = {}
+            title = title or "New Button"
+
+            local btnFrame = Instance.new("Frame")
+            local btnText = Instance.new("TextLabel")
+            local triangle = Instance.new("ImageLabel")
+            local UIGradient = Instance.new("UIGradient")
+
+            btnFrame.Name = "btnFrame"
+            btnFrame.Parent = sectionMain
+            btnFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            btnFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
+            btnFrame.ClipsDescendants = true
+            btnFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
+            btnFrame.Size = UDim2.new(0, 474, 0, 32)
+            btnFrame.Text = ""
+            btnFrame.AutoButtonColor = false
+            btnFrame.Font = Enum.Font.FredokaOne
+            btnFrame.TextStrokeTransparency = 0.000
+            btnFrame.TextColor3 = Color3.fromRGB(0, 0, 0)
+            btnFrame.TextSize = 14.000
+
+            btnText.Name = "btnText"
+            btnText.Parent = btnFrame
+            btnText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            btnText.BackgroundTransparency = 1.000
+            btnText.Position = UDim2.new(0.01774057, 0, 0.200000182, 0)
+            btnText.Size = UDim2.new(0, 175, 0, 18)
+            btnText.ZIndex = 5
+            btnText.Font = Enum.Font.FredokaOne
+            btnText.TextStrokeTransparency = 0.000
+            btnText.Text = title
+            btnText.TextColor3 = Color3.fromRGB(255, 255, 255)
+            btnText.TextSize = 14.000
+            btnText.TextXAlignment = Enum.TextXAlignment.Left
+
+            triangle.Name = "triangle"
+            triangle.Parent = btnFrame
+            triangle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            triangle.BackgroundTransparency = 1.000
+            triangle.BorderSizePixel = 0
+            triangle.ClipsDescendants = true
+            triangle.Position = UDim2.new(0.839998424, 0, -1.29596233, 0)
+            triangle.Size = UDim2.new(0, 132, 0, 85)
+            triangle.ZIndex = 5
+            triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
+            triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
+            triangle.ImageTransparency = 0.7
+
+            UIGradient.Color = getgenv().ThemeSequence
+            UIGradient.Rotation = 180
+            UIGradient.Parent = btnFrame
+
+            function LabelFunctions:Update(textB)
+                if btnText.Text ~= textB then
+                    game.TweenService:Create(btnText, TweenInfo.new(0.14, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
+                        TextTransparency = 1
+                    }):Play()
+                    wait(0.14)
+                    btnText.Text = textB
+                    game.TweenService:Create(btnText, TweenInfo.new(0.14, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
+                        TextTransparency = 0
+                    }):Play()
+                end 
+            end
+            return LabelFunctions
         end
         return fElements
     end
