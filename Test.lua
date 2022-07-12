@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {} --
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -207,10 +207,10 @@ function Forums.new(newName)
     Close.ScaleType = Enum.ScaleType.Fit
     Close.MouseButton1Click:Connect(function()
         local Tween1 = game.TweenService:Create(Content, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Position = UDim2.new(-0.5, 0, 0.5, 0)
+            Position = UDim2.new(-Content.Position.X, Content.Position.Y)
         })
         local Tween2 = game.TweenService:Create(shadow, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Position = UDim2.new(-0.5, 2, 0.5, 2)
+            Position = UDim2.new(-shadow.Position.X, shadow.Position.Y)
         })
         Tween1:Play()
         Tween2:Play()
