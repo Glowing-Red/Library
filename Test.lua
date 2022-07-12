@@ -104,14 +104,21 @@ function Forums:UIMinimize()
         end
     end
 
-function Forums.new(newName)
+getgenv().ThemeSequence = nil
+
+function Forums.new(newName, Themesequence)
     for i,v in pairs(game.CoreGui:GetChildren()) do
 	if v.Name == newName then
            v:Destroy()             
         end
     end
+    
     getgenv().libName = newName
     newName = newName or "forum.robloxscripts.com"
+    if Themesequence == nil then
+        --ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+    end
+    getgenv().ThemeSequence = Themesequence
 
     local _81asf91z9asf1 = Instance.new("ScreenGui")
     local shadow = Instance.new("ImageLabel")
@@ -230,7 +237,7 @@ function Forums.new(newName)
     UIAspectRatioConstraint.Parent = shadow
     UIAspectRatioConstraint.AspectRatio = 1.994
     
-    UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+    UIGradient.Color = getgenv().ThemeSequence
     UIGradient.Rotation = 90
     UIGradient.Parent = shadow
     
@@ -250,7 +257,7 @@ function Forums.new(newName)
     Glow_100.SliceCenter = Rect.new(122, 122, 600, 600)
     Glow_100.SliceScale = 0.000
     
-    UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+    UIGradient_2.Color = getgenv().ThemeSequence
     UIGradient_2.Rotation = 90
     UIGradient_2.Parent = Glow_100
     
@@ -279,7 +286,7 @@ function Forums.new(newName)
     titleContent.TextWrapped = true
     titleContent.TextXAlignment = Enum.TextXAlignment.Left
     
-    UIGradientContent.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+    UIGradientContent.Color = getgenv().ThemeSequence
     UIGradientContent.Rotation = 180
     UIGradientContent.Parent = headerContent
     
@@ -364,7 +371,8 @@ function Forums.new(newName)
         sectionOpen.Size = UDim2.new(0, 486, 0, 36)
         sectionOpen.AutoButtonColor = false
         sectionOpen.Text = ""
-        sectionOpen.Font = Enum.Font.SourceSans
+        sectionOpen.Font = Enum.Font.FredokaOne
+        sectionOpen.TextStrokeTransparency = 0.000
         sectionOpen.TextColor3 = Color3.fromRGB(0, 0, 0)
         sectionOpen.TextSize = 14.000
 
@@ -374,7 +382,8 @@ function Forums.new(newName)
         sectionTitle.BackgroundTransparency = 1.000
         sectionTitle.Position = UDim2.new(0.0222204365, 0, 0.245634928, 0)
         sectionTitle.Size = UDim2.new(0, 184, 0, 18)
-        sectionTitle.Font = Enum.Font.Gotham
+        sectionTitle.Font = Enum.Font.FredokaOne
+        sectionTitle.TextStrokeTransparency = 0.000
         sectionTitle.Text = title
         sectionTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
         sectionTitle.TextSize = 14.000
@@ -428,7 +437,8 @@ function Forums.new(newName)
             btnFrame.Size = UDim2.new(0, 474, 0, 32)
             btnFrame.Text = ""
             btnFrame.AutoButtonColor = false
-            btnFrame.Font = Enum.Font.SourceSans
+            btnFrame.Font = Enum.Font.FredokaOne
+            btnFrame.TextStrokeTransparency = 0.000
             btnFrame.TextColor3 = Color3.fromRGB(0, 0, 0)
             btnFrame.TextSize = 14.000
 
@@ -439,7 +449,8 @@ function Forums.new(newName)
             btnText.Position = UDim2.new(0.01774057, 0, 0.200000182, 0)
             btnText.Size = UDim2.new(0, 175, 0, 18)
             btnText.ZIndex = 5
-            btnText.Font = Enum.Font.Gotham
+            btnText.Font = Enum.Font.FredokaOne
+            btnText.TextStrokeTransparency = 0.000
             btnText.Text = title
             btnText.TextColor3 = Color3.fromRGB(255, 255, 255)
             btnText.TextSize = 14.000
@@ -452,10 +463,11 @@ function Forums.new(newName)
             triangle.BorderSizePixel = 0
             triangle.ClipsDescendants = true
             triangle.Position = UDim2.new(0.839998424, 0, -1.29596233, 0)
-            triangle.Size = UDim2.new(0, 132, 0, 81)
+            triangle.Size = UDim2.new(0, 132, 0, 85)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
+            triangle.Transparency = 0.7
 
             Sample.Name = "Sample"
             Sample.Parent = btnFrame
@@ -543,7 +555,8 @@ function Forums.new(newName)
             toggleFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
             toggleFrame.Size = UDim2.new(0, 474, 0, 32)
             toggleFrame.AutoButtonColor = false
-            toggleFrame.Font = Enum.Font.SourceSans
+            toggleFrame.Font = Enum.Font.FredokaOne
+            toggleFrame.TextStrokeTransparency = 0.000
             toggleFrame.Text = ""
             toggleFrame.TextColor3 = Color3.fromRGB(0, 0, 0)
             toggleFrame.TextSize = 14.000
@@ -555,7 +568,8 @@ function Forums.new(newName)
             toggleFrame_2.Position = UDim2.new(0.0680000037, 0, 0.200000003, 0)
             toggleFrame_2.Size = UDim2.new(0, 154, 0, 18)
             toggleFrame_2.ZIndex = 5
-            toggleFrame_2.Font = Enum.Font.Gotham
+            toggleFrame_2.Font = Enum.Font.FredokaOne
+            toggleFrame_2.TextStrokeTransparency = 0.000
             toggleFrame_2.Text = title
             toggleFrame_2.TextColor3 = Color3.fromRGB(255, 255, 255)
             toggleFrame_2.TextSize = 14.000
@@ -568,10 +582,11 @@ function Forums.new(newName)
             triangle.BorderSizePixel = 0
             triangle.ClipsDescendants = true
             triangle.Position = UDim2.new(0.839998424, 0, -1.29596233, 0)
-            triangle.Size = UDim2.new(0, 132, 0, 81)
+            triangle.Size = UDim2.new(0, 132, 0, 85)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
+            triangle.Transparency = 0.7
 
             checkedFramesFrame.Name = "checkedFramesFrame"
             checkedFramesFrame.Parent = toggleFrame
@@ -643,7 +658,7 @@ function Forums.new(newName)
             UICorner.CornerRadius = UDim.new(0, 99)
             UICorner.Parent = circle
 
-            UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+            UIGradient.Color = getgenv().ThemeSequence
             UIGradient.Rotation = 180
             UIGradient.Parent = toggleFrame
 
@@ -811,7 +826,8 @@ function Forums.new(newName)
             textboxFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
             textboxFrame.Size = UDim2.new(0, 474, 0, 32)
             textboxFrame.AutoButtonColor = false
-            textboxFrame.Font = Enum.Font.SourceSans
+            textboxFrame.Font = Enum.Font.FredokaOne
+            textboxFrame.TextStrokeTransparency = 0.000
             textboxFrame.Text = ""
             textboxFrame.TextColor3 = Color3.fromRGB(0, 0, 0)
             textboxFrame.TextSize = 14.000
@@ -822,7 +838,8 @@ function Forums.new(newName)
             txtboxText.BackgroundTransparency = 1.000
             txtboxText.Position = UDim2.new(0.0177406278, 0, 0.199999809, 0)
             txtboxText.Size = UDim2.new(0, 175, 0, 18)
-            txtboxText.Font = Enum.Font.Gotham
+            txtboxText.Font = Enum.Font.FredokaOne
+            txtboxText.TextStrokeTransparency = 0.000
             txtboxText.Text = title
             txtboxText.TextColor3 = Color3.fromRGB(255, 255, 255)
             txtboxText.TextSize = 14.000
@@ -835,10 +852,11 @@ function Forums.new(newName)
             triangle.BorderSizePixel = 0
             triangle.ClipsDescendants = true
             triangle.Position = UDim2.new(0.839998424, 0, -1.29596233, 0)
-            triangle.Size = UDim2.new(0, 132, 0, 81)
+            triangle.Size = UDim2.new(0, 132, 0, 85)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
+            triangle.Transparency = 0.7
 
             txtbox.Name = "txtbox"
             txtbox.Parent = textboxFrame
@@ -855,7 +873,8 @@ function Forums.new(newName)
             TextBox.Size = UDim2.new(0, 149, 0, 20)
             TextBox.ZIndex = 2
             TextBox.ClearTextOnFocus = false
-            TextBox.Font = Enum.Font.Gotham
+            TextBox.Font = Enum.Font.FredokaOne
+            TextBox.TextStrokeTransparency = 0.000
             TextBox.PlaceholderColor3 = Color3.fromRGB(255, 101, 101)
             TextBox.PlaceholderText = "Type Here"
             TextBox.Text = ""
@@ -928,7 +947,8 @@ function Forums.new(newName)
             sliderFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
             sliderFrame.Size = UDim2.new(0, 474, 0, 32)
             sliderFrame.AutoButtonColor = false
-            sliderFrame.Font = Enum.Font.SourceSans
+            sliderFrame.Font = Enum.Font.FredokaOne
+            sliderFrame.TextStrokeTransparency = 0.000
             sliderFrame.Text = ""
             sliderFrame.TextColor3 = Color3.fromRGB(0, 0, 0)
             sliderFrame.TextSize = 14.000
@@ -949,10 +969,11 @@ function Forums.new(newName)
             triangle.BorderSizePixel = 0
             triangle.ClipsDescendants = true
             triangle.Position = UDim2.new(0.839998424, 0, -1.29596233, 0)
-            triangle.Size = UDim2.new(0, 132, 0, 81)
+            triangle.Size = UDim2.new(0, 132, 0, 85)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
+            triangle.Transparency = 0.7
 
             sliderText.Name = "sliderText"
             sliderText.Parent = sliderFrame
@@ -961,7 +982,8 @@ function Forums.new(newName)
             sliderText.Position = UDim2.new(0.01774057, 0, 0.200000182, 0)
             sliderText.Size = UDim2.new(0, 175, 0, 18)
             sliderText.ZIndex = 5
-            sliderText.Font = Enum.Font.Gotham
+            sliderText.Font = Enum.Font.FredokaOne
+            sliderText.TextStrokeTransparency = 0.000
             sliderText.Text = title
             sliderText.TextColor3 = Color3.fromRGB(255, 255, 255)
             sliderText.TextSize = 14.000
@@ -974,7 +996,8 @@ function Forums.new(newName)
             sliderText_2.Position = UDim2.new(0.907649934, 0, 0.200000763, 0)
             sliderText_2.Size = UDim2.new(0, 34, 0, 18)
             sliderText_2.ZIndex = 5
-            sliderText_2.Font = Enum.Font.Gotham
+            sliderText_2.Font = Enum.Font.FredokaOne
+            sliderText_2.TextStrokeTransparency = 0.000
             sliderText_2.Text = minvalue
             sliderText_2.TextColor3 = Color3.fromRGB(235, 93, 93)
             sliderText_2.TextSize = 14.000
@@ -987,7 +1010,8 @@ function Forums.new(newName)
             SliderButton.Position = UDim2.new(0.397000015, 0, 0.405999988, 0)
             SliderButton.Size = UDim2.new(0, 215, 0, 6)
             SliderButton.AutoButtonColor = false
-            SliderButton.Font = Enum.Font.SourceSans
+            SliderButton.Font = Enum.Font.FredokaOne
+            SliderButton.TextStrokeTransparency = 0.000
             SliderButton.Text = ""
             SliderButton.TextColor3 = Color3.fromRGB(0, 0, 0)
             SliderButton.TextSize = 14.000
@@ -1067,7 +1091,8 @@ function Forums.new(newName)
             keybindFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
             keybindFrame.Size = UDim2.new(0, 474, 0, 32)
             keybindFrame.AutoButtonColor = false
-            keybindFrame.Font = Enum.Font.SourceSans
+            keybindFrame.Font = Enum.Font.FredokaOne
+            keybindFrame.TextStrokeTransparency = 0.000
             keybindFrame.Text = ""
             keybindFrame.TextColor3 = Color3.fromRGB(0, 0, 0)
             keybindFrame.TextSize = 14.000
@@ -1079,7 +1104,8 @@ function Forums.new(newName)
             keyText.Position = UDim2.new(0.01774057, 0, 0.200000182, 0)
             keyText.Size = UDim2.new(0, 175, 0, 18)
             keyText.ZIndex = 5
-            keyText.Font = Enum.Font.Gotham
+            keyText.Font = Enum.Font.FredokaOne
+            keyText.TextStrokeTransparency = 0.000
             keyText.Text = title
             keyText.TextColor3 = Color3.fromRGB(255, 255, 255)
             keyText.TextSize = 14.000
@@ -1092,10 +1118,11 @@ function Forums.new(newName)
             triangle.BorderSizePixel = 0
             triangle.ClipsDescendants = true
             triangle.Position = UDim2.new(0.839998424, 0, -1.29596233, 0)
-            triangle.Size = UDim2.new(0, 132, 0, 81)
+            triangle.Size = UDim2.new(0, 132, 0, 85)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
+            triangle.Transparency = 0.7
 
             Sample.Name = "Sample"
             Sample.Parent = keybindFrame
@@ -1113,7 +1140,8 @@ function Forums.new(newName)
             currentKey.Position = UDim2.new(0.679801822, 0, 0.200000763, 0)
             currentKey.Size = UDim2.new(0, 80, 0, 18)
             currentKey.ZIndex = 5
-            currentKey.Font = Enum.Font.Gotham
+            currentKey.Font = Enum.Font.FredokaOne
+            currentKey.TextStrokeTransparency = 0.000
             currentKey.Text = oldKey
             currentKey.TextColor3 = Color3.fromRGB(255, 255, 255)
             currentKey.TextSize = 14.000
@@ -1227,7 +1255,8 @@ function Forums.new(newName)
             dropOpen.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
             dropOpen.Size = UDim2.new(0, 474, 0, 32)
             dropOpen.AutoButtonColor = false
-            dropOpen.Font = Enum.Font.SourceSans
+            dropOpen.Font = Enum.Font.FredokaOne
+            dropOpen.TextStrokeTransparency = 0.000
             dropOpen.Text = ""
             dropOpen.TextColor3 = Color3.fromRGB(0, 0, 0)
             dropOpen.TextSize = 14.000
@@ -1293,7 +1322,8 @@ function Forums.new(newName)
             dropInf.Position = UDim2.new(0.0177406278, 0, 0.199999809, 0)
             dropInf.Size = UDim2.new(0, 81, 0, 18)
             dropInf.ZIndex = 5
-            dropInf.Font = Enum.Font.Gotham
+            dropInf.Font = Enum.Font.FredokaOne
+            dropInf.TextStrokeTransparency = 0.000
             dropInf.Text = title
             dropInf.TextColor3 = Color3.fromRGB(255, 255, 255)
             dropInf.TextSize = 14.000
@@ -1306,10 +1336,11 @@ function Forums.new(newName)
             triangle.BorderSizePixel = 0
             triangle.ClipsDescendants = true
             triangle.Position = UDim2.new(0.839998424, 0, -1.29596233, 0)
-            triangle.Size = UDim2.new(0, 132, 0, 81)
+            triangle.Size = UDim2.new(0, 132, 0, 85)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
+            triangle.Transparency = 0.7
 
             Sample.Name = "Sample"
             Sample.Parent = dropOpen
@@ -1351,7 +1382,8 @@ function Forums.new(newName)
                 dropOption.Position = UDim2.new(0, 0, 0.25179857, 0)
                 dropOption.Size = UDim2.new(0, 464, 0, 32)
                 dropOption.AutoButtonColor = false
-                dropOption.Font = Enum.Font.SourceSans
+                dropOption.Font = Enum.Font.FredokaOne
+                dropOption.TextStrokeTransparency = 0.000
                 dropOption.Text = ""
                 dropOption.TextColor3 = Color3.fromRGB(0, 0, 0)
                 dropOption.TextSize = 14.000
@@ -1363,7 +1395,8 @@ function Forums.new(newName)
                 btnText.Position = UDim2.new(0.01774057, 0, 0.200000182, 0)
                 btnText.Size = UDim2.new(0, 175, 0, 18)
                 btnText.ZIndex = 5
-                btnText.Font = Enum.Font.Gotham
+                btnText.Font = Enum.Font.FredokaOne
+                btnText.TextStrokeTransparency = 0.000
                 btnText.Text = v
                 btnText.TextColor3 = Color3.fromRGB(255, 255, 255)
                 btnText.TextSize = 14.000
@@ -1443,7 +1476,8 @@ function Forums.new(newName)
                     dropOption.Position = UDim2.new(0, 0, 0.25179857, 0)
                     dropOption.Size = UDim2.new(0, 464, 0, 32)
                     dropOption.AutoButtonColor = false
-                    dropOption.Font = Enum.Font.SourceSans
+                    dropOption.Font = Enum.Font.FredokaOne
+                    dropOption.TextStrokeTransparency = 0.000
                     dropOption.Text = ""
                     dropOption.TextColor3 = Color3.fromRGB(0, 0, 0)
                     dropOption.TextSize = 14.000
@@ -1455,7 +1489,8 @@ function Forums.new(newName)
                     btnText.Position = UDim2.new(0.01774057, 0, 0.200000182, 0)
                     btnText.Size = UDim2.new(0, 175, 0, 18)
                     btnText.ZIndex = 5
-                    btnText.Font = Enum.Font.Gotham
+                    btnText.Font = Enum.Font.FredokaOne
+                    btnText.TextStrokeTransparency = 0.000
                     btnText.Text = v
                     btnText.TextColor3 = Color3.fromRGB(255, 255, 255)
                     btnText.TextSize = 14.000
