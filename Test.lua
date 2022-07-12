@@ -1,5 +1,4 @@
-
-local Forums = {}
+local Forums = {}--
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -295,7 +294,7 @@ function Forums.new(newName, Themesequence)
     Main.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     Main.BorderColor3 = Color3.fromRGB(27, 27, 27)
     Main.ClipsDescendants = true
-    Main.Backgroundtransparency = 1
+    Main.BackgroundTransparency = 1
     Main.Position = UDim2.new(0.075, 0,0.065, 0)
     Main.Size = UDim2.new(0.875, 0,0.9, 0) --0, 486, 0, 283
     
