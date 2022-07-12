@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {} --
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -355,7 +355,7 @@ function Forums.new(newName)
         itemsList.Parent = sectionMain
         itemsList.HorizontalAlignment = Enum.HorizontalAlignment.Center
         itemsList.SortOrder = Enum.SortOrder.LayoutOrder
-        itemsList.Padding = UDim.new(0, 5)
+        itemsList.Padding = UDim.new(0, -12)
 
         sectionOpen.Name = "sectionOpen"
         sectionOpen.Parent = sectionMain
@@ -520,64 +520,46 @@ function Forums.new(newName)
             callback = callback or function() end
             local ToggleFunctions = {}
 
-            local toggleFrame = Instance.new("TextButton")
-            local toggleFrame_2 = Instance.new("TextLabel")
-            local triangle = Instance.new("ImageLabel")
+            local toggleFrame = Instance.new("ImageLabel")
+            local UIGradient = Instance.new("UIGradient")
             local checkedFramesFrame = Instance.new("Frame")
-            local checked = Instance.new("ImageButton")
-            local unchecked = Instance.new("ImageButton")
             local UIListLayout = Instance.new("UIListLayout")
+            local checked = Instance.new("ImageButton")
             local UIListLayout_2 = Instance.new("UIListLayout")
-            local Sample = Instance.new("ImageLabel")
+            local unchecked = Instance.new("ImageButton")
             local circle1 = Instance.new("Frame")
-            local UIListLayout_3 = Instance.new("UIListLayout")
             local circle = Instance.new("Frame")
             local UICorner = Instance.new("UICorner")
+            local UIListLayout_3 = Instance.new("UIListLayout")
+            local toggleFrame_2 = Instance.new("TextLabel")
+            local CheckButton = Instance.new("TextButton")
 
             toggleFrame.Name = "toggleFrame"
-            toggleFrame.Parent = sectionMain
-            toggleFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
-            toggleFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
-            toggleFrame.ClipsDescendants = true
-            toggleFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
-            toggleFrame.Size = UDim2.new(0, 474, 0, 32)
-            toggleFrame.AutoButtonColor = false
-            toggleFrame.Font = Enum.Font.SourceSans
-            toggleFrame.Text = ""
-            toggleFrame.TextColor3 = Color3.fromRGB(0, 0, 0)
-            toggleFrame.TextSize = 14.000
+            toggleFrame.Parent = game.StarterGui["robloxscripts.com"].Main.Content.containerHolder.pages.newPage.sectionMain
+            toggleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            toggleFrame.BackgroundTransparency = 1.000
+            toggleFrame.Position = UDim2.new(-0.12371134, 0, 0.238709673, 0)
+            toggleFrame.Rotation = 90.000
+            toggleFrame.Size = UDim2.new(0, 605, 0, 50)
+            toggleFrame.Image = "http://www.roblox.com/asset/?id=7129038420"
+            toggleFrame.ScaleType = Enum.ScaleType.Fit
 
-            toggleFrame_2.Name = "toggleFrame"
-            toggleFrame_2.Parent = toggleFrame
-            toggleFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            toggleFrame_2.BackgroundTransparency = 1.000
-            toggleFrame_2.Position = UDim2.new(0.0680000037, 0, 0.200000003, 0)
-            toggleFrame_2.Size = UDim2.new(0, 154, 0, 18)
-            toggleFrame_2.ZIndex = 5
-            toggleFrame_2.Font = Enum.Font.Gotham
-            toggleFrame_2.Text = title
-            toggleFrame_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-            toggleFrame_2.TextSize = 14.000
-            toggleFrame_2.TextXAlignment = Enum.TextXAlignment.Left
-
-            triangle.Name = "triangle"
-            triangle.Parent = toggleFrame
-            triangle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            triangle.BackgroundTransparency = 1.000
-            triangle.BorderSizePixel = 0
-            triangle.ClipsDescendants = true
-            triangle.Position = UDim2.new(0.839998424, 0, -1.29596233, 0)
-            triangle.Size = UDim2.new(0, 132, 0, 81)
-            triangle.ZIndex = 5
-            triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+            UIGradient.Rotation = 180
+            UIGradient.Parent = toggleFrame
 
             checkedFramesFrame.Name = "checkedFramesFrame"
             checkedFramesFrame.Parent = toggleFrame
             checkedFramesFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             checkedFramesFrame.BackgroundTransparency = 1.000
+            checkedFramesFrame.Position = UDim2.new(0.129999995, 0, 0.075000003, 0)
             checkedFramesFrame.Size = UDim2.new(0, 32, 0, 32)
             checkedFramesFrame.ZIndex = 5
+
+            UIListLayout.Parent = checkedFramesFrame
+            UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+            UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+            UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
 
             checked.Name = "checked"
             checked.Parent = checkedFramesFrame
@@ -585,11 +567,16 @@ function Forums.new(newName)
             checked.LayoutOrder = 9
             checked.Position = UDim2.new(0.00843881816, 0, 0.09375, 0)
             checked.Size = UDim2.new(0, 24, 0, 24)
-            checked.ImageTransparency = 1
             checked.ZIndex = 55
             checked.Image = "rbxassetid://3926311105"
             checked.ImageRectOffset = Vector2.new(4, 836)
             checked.ImageRectSize = Vector2.new(48, 48)
+            checked.ImageTransparency = 1.000
+
+            UIListLayout_2.Parent = checked
+            UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+            UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+            UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
 
             unchecked.Name = "unchecked"
             unchecked.Parent = checked
@@ -601,50 +588,58 @@ function Forums.new(newName)
             unchecked.ImageRectOffset = Vector2.new(724, 724)
             unchecked.ImageRectSize = Vector2.new(36, 36)
 
-            UIListLayout.Parent = checked
-            UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-            UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-            UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-
-            UIListLayout_2.Parent = checkedFramesFrame
-            UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
-            UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-            UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
-
-            Sample.Name = "Sample"
-            Sample.Parent = toggleFrame
-            Sample.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            Sample.BackgroundTransparency = 1.000
-            Sample.ZIndex = 2
-            Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
-            Sample.ImageTransparency = 0.600
-
             circle1.Name = "circle1"
             circle1.Parent = toggleFrame
             circle1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             circle1.BackgroundTransparency = 1.000
+            circle1.Position = UDim2.new(0.129999995, 0, 0.075000003, 0)
             circle1.Size = UDim2.new(0, 32, 0, 32)
             circle1.ZIndex = 5
+
+            circle.Name = "circle"
+            circle.Parent = circle1
+            circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            circle.BackgroundTransparency = 1.000
+            circle.Position = UDim2.new(0.00843881816, 0, 0.09375, 0)
+
+            UICorner.CornerRadius = UDim.new(0, 99)
+            UICorner.Parent = circle
 
             UIListLayout_3.Parent = circle1
             UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
             UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
             UIListLayout_3.VerticalAlignment = Enum.VerticalAlignment.Center
 
-            circle.Name = "circle"
-            circle.Parent = circle1
-            circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            circle.BackgroundTransparency = 1
-            circle.Position = UDim2.new(0.00843881816, 0, 0.09375, 0)
-            circle.Size = UDim2.new(0, 0, 0, 0)
+            toggleFrame_2.Name = "toggleFrame"
+            toggleFrame_2.Parent = toggleFrame
+            toggleFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            toggleFrame_2.BackgroundTransparency = 1.000
+            toggleFrame_2.Position = UDim2.new(0.185000002, 0, 0.224999994, 0)
+            toggleFrame_2.Size = UDim2.new(0, 154, 0, 18)
+            toggleFrame_2.ZIndex = 5
+            toggleFrame_2.Font = Enum.Font.FredokaOne
+            toggleFrame_2.Text = "Toggle Example"
+            toggleFrame_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+            toggleFrame_2.TextSize = 14.000
+            toggleFrame_2.TextStrokeTransparency = 0.000
+            toggleFrame_2.TextXAlignment = Enum.TextXAlignment.Left
 
-            UICorner.CornerRadius = UDim.new(0, 99)
-            UICorner.Parent = circle
+            CheckButton.Name = "CheckButton"
+            CheckButton.Parent = toggleFrame
+            CheckButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+            CheckButton.BackgroundTransparency = 1.000
+            CheckButton.BorderSizePixel = 0
+            CheckButton.Position = UDim2.new(0.129999995, 0, 0.075000003, 0)
+            CheckButton.Size = UDim2.new(0, 32, 0, 32)
+            CheckButton.Font = Enum.Font.SourceSans
+            CheckButton.Text = ""
+            CheckButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+            CheckButton.TextSize = 1.000
+            CheckButton.TextTransparency = 1.000
 
             local ms = game.Players.LocalPlayer:GetMouse()
 
-            local btn = toggleFrame
+            local btn = CheckButton
             local sample = btn:WaitForChild('Sample')
 
             btn.MouseButton1Click:Connect(function()
