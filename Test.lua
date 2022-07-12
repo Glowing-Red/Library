@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {} --
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -46,7 +46,7 @@ function Forums:DraggingEnabled(frame, parent)
 end
 function Forums:UIMinimize()
         if minimized then
-            game.TweenService:Create(game.CoreGui[getgenv().libName].shadow.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            game.TweenService:Create(game.CoreGui[getgenv().libName].Content.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
                 Size = UDim2.new(0, 486, 0, 283)
             }):Play()
             wait()
@@ -59,7 +59,7 @@ function Forums:UIMinimize()
                 ImageTransparency = 1
             }):Play()
             wait()
-            game.TweenService:Create(game.CoreGui[getgenv().libName].shadow.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            game.TweenService:Create(game.CoreGui[getgenv().libName].Content.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
                 Size = UDim2.new(0,0,0,0)
             }):Play()
             minimized = true
@@ -105,7 +105,8 @@ function Forums.new(newName)
     local UIListLayout = Instance.new("UIListLayout")
     local UIListLayout_2 = Instance.new("UIListLayout")
 
-    Forums:DraggingEnabled(header, shadow)
+    Forums:DraggingEnabled(headerContent, shadow)
+    Forums:DraggingEnabled(headerContent, Content)
     
     UIListLayout.Parent = Main
     UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
