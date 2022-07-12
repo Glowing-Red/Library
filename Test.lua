@@ -1,4 +1,3 @@
---
 local Forums = {}
 local minimized = false
 
@@ -161,7 +160,7 @@ function Forums.new(newName)
     Main.BorderColor3 = Color3.fromRGB(27, 27, 27)
     Main.ClipsDescendants = true
     Main.Position = UDim2.new(0.075, 0,0.065, 0)
-    Main.Size = UDim2.new(0,0,0,0) --0, 486, 0, 283
+    Main.Size = UDim2.new(0, 486, 0, 283) --0, 486, 0, 283
     header.Name = "header"
     header.Parent = Main
     header.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
@@ -284,7 +283,7 @@ function Forums.new(newName)
         sectionMain.BorderColor3 = Color3.fromRGB(27, 27, 27)
         sectionMain.ClipsDescendants = true
         sectionMain.Position = UDim2.new(0, 0, 0.0040487065, 0)-- 0.075, 0,0.065, 0
-        sectionMain.Size = UDim2.new(0.875, 0, 0.9, 0)
+        sectionMain.Size = UDim2.new(0, 485, 0, 36)
 
         itemsList.Name = "itemsList"
         itemsList.Parent = sectionMain
