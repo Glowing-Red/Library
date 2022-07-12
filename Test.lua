@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {} ----
 local minimized = false
 
 local tween = game:GetService("TweenService")
