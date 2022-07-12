@@ -1246,9 +1246,10 @@ function Forums.new(newName, Themesequence)
             return KeyFunctions
         end
         
-        function fElements:NewDropdown(title, list, callback)
+        function fElements:NewDropdown(title, selected, list, callback)
             local DropdownFunc = {}
             title = title or "nil"
+            selected = selected or "nil"
             list = list or {}
             callback = callback or function() end
             local dOpened = false
@@ -1353,7 +1354,7 @@ function Forums.new(newName, Themesequence)
             dropInf.ZIndex = 5
             dropInf.Font = Enum.Font.FredokaOne
             dropInf.TextStrokeTransparency = 0.000
-            dropInf.Text = title
+            dropInf.Text = title..selected
             dropInf.TextColor3 = Color3.fromRGB(255, 255, 255)
             dropInf.TextSize = 14.000
             dropInf.TextXAlignment = Enum.TextXAlignment.Left
@@ -1448,7 +1449,7 @@ function Forums.new(newName, Themesequence)
                 local btn = dropOption
                 local sample = Sample_2
                 btn.MouseButton1Click:Connect(function()
-                    dropInf.Text = v
+                    dropInf.Text = title..v
                     callback(v)
                     game.TweenService:Create(dropFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
                         Size = UDim2.new(0,474,0,32)
