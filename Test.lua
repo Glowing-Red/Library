@@ -537,7 +537,7 @@ function Forums.new(newName)
 
             toggleFrame.Name = "toggleFrame"
             toggleFrame.Parent = sectionMain
-            toggleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            toggleFrame.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
             toggleFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             toggleFrame.ClipsDescendants = true
             toggleFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -768,12 +768,12 @@ function Forums.new(newName)
             end)
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(155, 155, 155)
+                    BackgroundColor3 = Color3.fromRGB(200, 200, 200)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    BackgroundColor3 = Color3.fromRGB(225, 225, 225)
                 }):Play()
             end)
             function ToggleFunctions:Update(textT)
