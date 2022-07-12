@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {} --
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -79,6 +79,12 @@ function Forums.new(newName)
     local shadow = Instance.new("ImageLabel")
     local Content = Instance.new("ImageLabel")
     local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+    local UISizeConstraint = Instance.new("UISizeConstraint")
+    local Shadow = Instance.new("ImageLabel")
+    local Close = Instance.new("ImageButton")
+    local Icon = Instance.new("ImageLabel")
+    local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+    local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
     local UIGradient = Instance.new("UIGradient")
     local UISizeConstraint = Instance.new("UISizeConstraint")
     local Glow_100 = Instance.new("ImageLabel")
@@ -126,6 +132,49 @@ function Forums.new(newName)
     Content.Image = "rbxassetid://8942119552"
     Content.ImageColor3 = Color3.fromRGB(107, 107, 107)
     Content.ScaleType = Enum.ScaleType.Fit
+    
+    UIAspectRatioConstraint.Parent = Content
+    UIAspectRatioConstraint.AspectRatio = 1.994
+    
+    UISizeConstraint.Parent = Content
+    UISizeConstraint.MaxSize = Vector2.new(700, INF)
+    UISizeConstraint.MinSize = Vector2.new(0, 250)
+    
+    Shadow.Name = "shadow"
+    Shadow.Parent = Content
+    Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Shadow.BackgroundTransparency = 1.000
+    Shadow.Position = UDim2.new(-0.000942429528, -3, -0.0883159637, 2)
+    Shadow.Size = UDim2.new(0.949999988, 0, 0.197453007, 0)
+    Shadow.ZIndex = 0
+    Shadow.Image = "http://www.roblox.com/asset/?id=7129038420"
+    Shadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+    Shadow.ScaleType = Enum.ScaleType.Fit
+    
+    Close.Name = "Close"
+    Close.Parent = Content
+    Close.AnchorPoint = Vector2.new(0.5, 0.5)
+    Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Close.BackgroundTransparency = 1.000
+    Close.Position = UDim2.new(0.985000014, 0, 0.0399999991, 0)
+    Close.Selectable = false
+    Close.Size = UDim2.new(0.200000003, 0, 0.189999998, 0)
+    Close.ZIndex = 2
+    Close.Image = "http://www.roblox.com/asset/?id=6214665748"
+    Close.ImageColor3 = Color3.fromRGB(255, 0, 0)
+    Close.ScaleType = Enum.ScaleType.Fit
+    
+    Icon.Name = "Icon"
+    Icon.Parent = Close
+    Icon.AnchorPoint = Vector2.new(0.5, 0.5)
+    Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Icon.BackgroundTransparency = 1.000
+    Icon.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Icon.Size = UDim2.new(0.400000006, 0, 0.400000006, 0)
+    Icon.Image = "http://www.roblox.com/asset/?id=5755239863"
+    Icon.ScaleType = Enum.ScaleType.Fit
+    
+    UIAspectRatioConstraint_2.Parent = Close
     
     UIAspectRatioConstraint.Parent = shadow
     UIAspectRatioConstraint.AspectRatio = 1.994
