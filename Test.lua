@@ -1,3 +1,4 @@
+--
 local Forums = {}
 local minimized = false
 
@@ -77,6 +78,12 @@ function Forums.new(newName)
 
     local _81asf91z9asf1 = Instance.new("ScreenGui")
     local shadow = Instance.new("ImageLabel")
+    local Content = Instance.new("ImageLabel")
+    local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+    local UIGradient = Instance.new("UIGradient")
+    local UISizeConstraint = Instance.new("UISizeConstraint")
+    local Glow_100 = Instance.new("ImageLabel")
+    local UIGradient_2 = Instance.new("UIGradient")
     local Main = Instance.new("Frame")
     local header = Instance.new("Frame")
     local title = Instance.new("TextLabel")
@@ -102,17 +109,54 @@ function Forums.new(newName)
 
     shadow.Name = "shadow"
     shadow.Parent = _81asf91z9asf1
+    shadow.AnchorPoint = Vector2.new(0.5, 0.5)
     shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     shadow.BackgroundTransparency = 1.000
-    shadow.Position = UDim2.new(0.377575755, 0, 0.382281542, 0)
-    shadow.Size = UDim2.new(0, 539, 0, 317)
+    shadow.Position = UDim2.new(0.5, 2, 0.5, 2)
+    shadow.Size = UDim2.new(0.800000012, 0, 0.5, 0)
     shadow.ZIndex = 0
-    shadow.ImageTransparency = 1
-    shadow.Image = "rbxassetid://4996891970"
-    shadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
-
+    shadow.Image = "rbxassetid://8993270989"
+    
+    Content.Name = "Content"
+    Content.Parent = _81asf91z9asf1
+    Content.AnchorPoint = Vector2.new(0.5, 0.5)
+    Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Content.BackgroundTransparency = 1.000
+    Content.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Content.Size = UDim2.new(0.800000012, 0, 0.5, 0)
+    Content.Image = "rbxassetid://8942119552"
+    Content.ImageColor3 = Color3.fromRGB(107, 107, 107)
+    Content.ScaleType = Enum.ScaleType.Fit
+    
+    UIAspectRatioConstraint.Parent = shadow
+    UIAspectRatioConstraint.AspectRatio = 1.994
+    
+    UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+    UIGradient.Rotation = 90
+    UIGradient.Parent = shadow
+    
+    UISizeConstraint.Parent = shadow
+    UISizeConstraint.MaxSize = Vector2.new(700, INF)
+    UISizeConstraint.MinSize = Vector2.new(0, 250)
+    
+    Glow_100.Name = "Glow_100"
+    Glow_100.Parent = shadow
+    Glow_100.AnchorPoint = Vector2.new(0.5, 0.5)
+    Glow_100.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Glow_100.BackgroundTransparency = 1.000
+    Glow_100.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Glow_100.Size = UDim2.new(2, 0, 2, 0)
+    Glow_100.Image = "rbxassetid://8998039938"
+    Glow_100.ScaleType = Enum.ScaleType.Crop
+    Glow_100.SliceCenter = Rect.new(122, 122, 600, 600)
+    Glow_100.SliceScale = 0.000
+    
+    UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+    UIGradient_2.Rotation = 90
+    UIGradient_2.Parent = Glow_100
+    
     Main.Name = "Main"
-    Main.Parent = shadow
+    Main.Parent = Content
     Main.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     Main.BorderColor3 = Color3.fromRGB(27, 27, 27)
     Main.ClipsDescendants = true
