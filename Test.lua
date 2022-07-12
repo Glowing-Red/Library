@@ -1,4 +1,4 @@
-local Forums = {} --
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -535,7 +535,7 @@ function Forums.new(newName)
             local CheckButton = Instance.new("TextButton")
 
             toggleFrame.Name = "toggleFrame"
-            toggleFrame.Parent = game.StarterGui["robloxscripts.com"].Main.Content.containerHolder.pages.newPage.sectionMain
+            toggleFrame.Parent = sectionMain
             toggleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             toggleFrame.BackgroundTransparency = 1.000
             toggleFrame.Position = UDim2.new(-0.12371134, 0, 0.238709673, 0)
