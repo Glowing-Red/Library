@@ -1,4 +1,3 @@
-
 local Forums = {}
 local minimized = false
 
@@ -1641,12 +1640,6 @@ function Forums.new(newName, Themesequence)
             btnFrame.ClipsDescendants = true
             btnFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
             btnFrame.Size = UDim2.new(0, 474, 0, 32)
-            btnFrame.Text = ""
-            btnFrame.AutoButtonColor = false
-            btnFrame.Font = Enum.Font.FredokaOne
-            btnFrame.TextStrokeTransparency = 0.000
-            btnFrame.TextColor3 = Color3.fromRGB(0, 0, 0)
-            btnFrame.TextSize = 14.000
 
             btnText.Name = "btnText"
             btnText.Parent = btnFrame
