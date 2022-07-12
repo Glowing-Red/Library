@@ -1,4 +1,4 @@
-local Forums = {}--
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -695,7 +695,6 @@ function Forums.new(newName)
                     Size = UDim2.new(0,0,0,0),
                     BackgroundTransparency = 1
                 }):Play()
-                toggled = not toggled
                 pcall(callback, toggled)
             end
             btn.MouseButton1Click:Connect(function()
