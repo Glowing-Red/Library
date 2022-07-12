@@ -1,4 +1,4 @@
-local Forums = {} --
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -89,6 +89,9 @@ function Forums.new(newName)
     local UISizeConstraint = Instance.new("UISizeConstraint")
     local Glow_100 = Instance.new("ImageLabel")
     local UIGradient_2 = Instance.new("UIGradient")
+    local headerContent = Instance.new("ImageLabel")
+    local titleContent = Instance.new("TextLabel")
+    local UIGradientContent = Instance.new("UIGradient")
     local Main = Instance.new("Frame")
     local header = Instance.new("Frame")
     local title = Instance.new("TextLabel")
@@ -203,6 +206,35 @@ function Forums.new(newName)
     UIGradient_2.Rotation = 90
     UIGradient_2.Parent = Glow_100
     
+    headerContent.Name = "header"
+    headerContent.Parent = Content
+    headerContent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    headerContent.BackgroundTransparency = 1.000
+    headerContent.Position = UDim2.new(-0.000942429528, 0, -0.0883159637, 0)
+    headerContent.Size = UDim2.new(0.949999988, 0, 0.197453007, 0)
+    headerContent.Image = "http://www.roblox.com/asset/?id=7129038420"
+    headerContent.ScaleType = Enum.ScaleType.Fit
+    
+    titleContent.Name = "title"
+    titleContent.Parent = headerContent
+    titleContent.AnchorPoint = Vector2.new(0, 0.5)
+    titleContent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    titleContent.BackgroundTransparency = 1.000
+    titleContent.Position = UDim2.new(0.0680000037, 0, 0.400000006, 0)
+    titleContent.Size = UDim2.new(0.458673835, 0, 0.479999989, 0)
+    titleContent.Font = Enum.Font.FredokaOne
+    titleContent.Text = "title"
+    titleContent.TextColor3 = Color3.fromRGB(255, 255, 255)
+    titleContent.TextScaled = true
+    titleContent.TextSize = 14.000
+    titleContent.TextStrokeTransparency = 0.000
+    titleContent.TextWrapped = true
+    titleContent.TextXAlignment = Enum.TextXAlignment.Left
+    
+    UIGradientContent.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+    UIGradientContent.Rotation = 180
+    UIGradientContent.Parent = headerContent
+    
     Main.Name = "Main"
     Main.Parent = Content
     Main.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
@@ -210,6 +242,7 @@ function Forums.new(newName)
     Main.ClipsDescendants = true
     Main.Position = UDim2.new(0.075, 0,0.065, 0)
     Main.Size = UDim2.new(0, 486, 0, 283) --0, 486, 0, 283
+    
     header.Name = "header"
     header.Parent = Main
     header.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
