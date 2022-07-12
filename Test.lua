@@ -1,4 +1,4 @@
-local Forums = {}--
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -1225,7 +1225,7 @@ function Forums.new(newName, Themesequence)
             end
 
             local function CheckKey(input, gameProcessedEvent)
-                if IsKey() then
+                if IsOldKey() then
                     pcall(callback)
                 end
             end
