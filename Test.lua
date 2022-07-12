@@ -1,4 +1,4 @@
-local Forums = {} --
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -686,6 +686,17 @@ function Forums.new(newName)
                 game.TweenService:Create(unchecked, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
                     ImageTransparency = 1
                 }):Play()
+                game.TweenService:Create(circle, TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                    Size = UDim2.new(0,30,0,30),
+                    BackgroundTransparency = 0.7
+                }):Play()
+                wait(0.15)
+                game.TweenService:Create(circle, TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                    Size = UDim2.new(0,0,0,0),
+                    BackgroundTransparency = 1
+                }):Play()
+                toggled = not toggled
+                pcall(callback, toggled)
             end
             btn.MouseButton1Click:Connect(function()
                 if toggled then
