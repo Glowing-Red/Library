@@ -1545,7 +1545,7 @@ function Forums.new(newName, Themesequence)
                     local mouse = game:GetService("Players").LocalPlayer:GetMouse()
                     local ms = mouse
                     btn.MouseButton1Click:Connect(function()
-                        dropInf.Text = v
+                        dropInf.Text = title..v
                         callback(v)
                         game.TweenService:Create(dropFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
                             Size = UDim2.new(0,474,0,32)
