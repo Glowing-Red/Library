@@ -203,10 +203,10 @@ function Forums.new(newName)
     Close.ScaleType = Enum.ScaleType.Fit
     Close.MouseButton1Click:Connect(function()
         local Tween1 = game.TweenService:Create(Content, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Position = UDim2.new(-Content.Position.X, Content.Position.Y)
+            Position = UDim2.new(-0.5, 0, Content.Position.Y)
         })
         local Tween2 = game.TweenService:Create(shadow, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Position = UDim2.new(-shadow.Position.X, shadow.Position.Y)
+            Position = UDim2.new(-0.5, 0, shadow.Position.Y)
         })
         Tween1:Play()
         Tween2:Play()
