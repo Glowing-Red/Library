@@ -509,12 +509,12 @@ function Forums.new(newName, Themesequence)
             end)
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+                    BackgroundColor3 = Color3.fromRGB(205, 205, 205)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(225, 225, 225)
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 }):Play()
             end)
             function ButtonFunctions:Update(textB)
@@ -554,7 +554,7 @@ function Forums.new(newName, Themesequence)
 
             toggleFrame.Name = "toggleFrame"
             toggleFrame.Parent = sectionMain
-            toggleFrame.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
+            toggleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             toggleFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             toggleFrame.ClipsDescendants = true
             toggleFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -793,7 +793,7 @@ function Forums.new(newName, Themesequence)
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(225, 225, 225)
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 }):Play()
             end)
             function ToggleFunctions:Update(textT)
@@ -1263,7 +1263,7 @@ function Forums.new(newName, Themesequence)
 
             dropFrame.Name = "dropFrame"
             dropFrame.Parent = sectionMain
-            dropFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            dropFrame.BackgroundColor3 = Color3.fromRGB(23, 23, 23)
             dropFrame.BorderColor3 = Color3.fromRGB(33, 33, 33)
             dropFrame.ClipsDescendants = true
             dropFrame.Position = UDim2.new(0.0113402065, 0, 0.593175828, 0)
@@ -1271,7 +1271,7 @@ function Forums.new(newName, Themesequence)
 
             dropOpen.Name = "dropOpen"
             dropOpen.Parent = dropFrame
-            dropOpen.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            dropOpen.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             dropOpen.BorderColor3 = Color3.fromRGB(27, 27, 27)
             dropOpen.ClipsDescendants = true
             dropOpen.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -1282,6 +1282,11 @@ function Forums.new(newName, Themesequence)
             dropOpen.Text = ""
             dropOpen.TextColor3 = Color3.fromRGB(0, 0, 0)
             dropOpen.TextSize = 14.000
+
+            UIGradient.Color = getgenv().ThemeSequence
+            UIGradient.Rotation = 180
+            UIGradient.Parent = dropOpen
+
             dropOpen.MouseButton1Click:Connect(function()
                 if dOpened then
                     dOpened = false
@@ -1328,12 +1333,12 @@ function Forums.new(newName, Themesequence)
 
             dropOpen.MouseEnter:Connect(function()
                 game.TweenService:Create(dropOpen, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(205, 205, 205)
                 }):Play()
             end)
             dropOpen.MouseLeave:Connect(function()
                 game.TweenService:Create(dropOpen, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 }):Play()
             end)
 
@@ -1384,10 +1389,6 @@ function Forums.new(newName, Themesequence)
             expand_more.ImageColor3 = Color3.fromRGB(255, 255, 255)
             expand_more.ImageRectOffset = Vector2.new(564, 284)
             expand_more.ImageRectSize = Vector2.new(36, 36)
-            
-            UIGradient.Color = getgenv().ThemeSequence
-            UIGradient.Rotation = 180
-            UIGradient.Parent = expand_more
 
             dropList.Name = "dropList"
             dropList.Parent = dropFrame
@@ -1403,7 +1404,7 @@ function Forums.new(newName, Themesequence)
 
                 dropOption.Name = "dropOption"
                 dropOption.Parent = dropFrame
-                dropOption.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                dropOption.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 dropOption.BorderColor3 = Color3.fromRGB(30, 30, 30)
                 dropOption.ClipsDescendants = true
                 dropOption.Position = UDim2.new(0, 0, 0.25179857, 0)
