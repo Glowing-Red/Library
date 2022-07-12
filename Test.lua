@@ -1,4 +1,4 @@
-local Forums = {}--
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -1360,13 +1360,13 @@ function Forums.new(newName, Themesequence)
             expand_more.Size = UDim2.new(0, 25, 0, 25)
             expand_more.ZIndex = 55
             expand_more.Image = "rbxassetid://3926305904"
-            expand_more.ImageColor3 = Color3.fromRGB(0, 0, 0)
+            expand_more.ImageColor3 = Color3.fromRGB(255, 255, 255)
             expand_more.ImageRectOffset = Vector2.new(564, 284)
             expand_more.ImageRectSize = Vector2.new(36, 36)
             
             UIGradient.Color = getgenv().ThemeSequence
             UIGradient.Rotation = 180
-            UIGradient.Parent = headerContent
+            UIGradient.Parent = expand_more
 
             dropList.Name = "dropList"
             dropList.Parent = dropFrame
@@ -1595,7 +1595,7 @@ function Forums.new(newName, Themesequence)
             
             UIGradient.Color = getgenv().ThemeSequence
             UIGradient.Rotation = 180
-            UIGradient.Parent = headerContent
+            UIGradient.Parent = seperator
         end
         return fElements
     end
