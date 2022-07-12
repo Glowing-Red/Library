@@ -294,8 +294,9 @@ function Forums.new(newName, Themesequence)
     Main.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     Main.BorderColor3 = Color3.fromRGB(27, 27, 27)
     Main.ClipsDescendants = true
+    Main.Backgroundtransparency = 1
     Main.Position = UDim2.new(0.075, 0,0.065, 0)
-    Main.Size = UDim2.new(0, 486, 0, 283) --0, 486, 0, 283
+    Main.Size = UDim2.new(0.875, 0,0.9, 0) --0, 486, 0, 283
     
     containerHolder.Name = "containerHolder"
     containerHolder.Parent = Main
@@ -313,7 +314,7 @@ function Forums.new(newName, Themesequence)
     UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
 
     game.TweenService:Create(Main, TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-        Size = UDim2.new(0, 486, 0, 283)
+        Size = UDim2.new(0.875, 0,0.9, 0)
     }):Play()
     wait()
     game.TweenService:Create(shadow, TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
