@@ -1,4 +1,4 @@
-local Forums = {} --
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -97,7 +97,7 @@ function Forums:UIMinimize()
                 ImageTransparency = 1
             }):Play()
             wait()
-            game.TweenService:Create(game.CoreGui[getgenv().libName].Content.Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            game.TweenService:Create(game.CoreGui[getgenv().libName].Content, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
                 Size = UDim2.new(0,0,0,0)
             }):Play()
             minimized = true
