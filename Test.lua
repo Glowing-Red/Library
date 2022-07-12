@@ -296,7 +296,7 @@ function Forums.new(newName)
     containerHolder.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     containerHolder.BorderSizePixel = 0
     containerHolder.Position = UDim2.new(0, 0, 0.124251083, 0)
-    containerHolder.Size = UDim2.new(0, 485, 0, 247)
+    containerHolder.Size = UDim2.new(0, 485, 0, 220)
 
     pages.Name = "pages"
     pages.Parent = containerHolder
