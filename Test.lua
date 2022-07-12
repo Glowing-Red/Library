@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {}--
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -355,7 +355,7 @@ function Forums.new(newName)
         itemsList.Parent = sectionMain
         itemsList.HorizontalAlignment = Enum.HorizontalAlignment.Center
         itemsList.SortOrder = Enum.SortOrder.LayoutOrder
-        itemsList.Padding = UDim.new(0, -12)
+        itemsList.Padding = UDim.new(0, 5)
 
         sectionOpen.Name = "sectionOpen"
         sectionOpen.Parent = sectionMain
@@ -618,7 +618,7 @@ function Forums.new(newName)
             toggleFrame_2.Size = UDim2.new(0, 154, 0, 18)
             toggleFrame_2.ZIndex = 5
             toggleFrame_2.Font = Enum.Font.FredokaOne
-            toggleFrame_2.Text = "Toggle Example"
+            toggleFrame_2.Text = title
             toggleFrame_2.TextColor3 = Color3.fromRGB(255, 255, 255)
             toggleFrame_2.TextSize = 14.000
             toggleFrame_2.TextStrokeTransparency = 0.000
