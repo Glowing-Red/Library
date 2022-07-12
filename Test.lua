@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {} --
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -205,6 +205,20 @@ function Forums.new(newName)
     Close.Image = "http://www.roblox.com/asset/?id=6214665748"
     Close.ImageColor3 = Color3.fromRGB(255, 0, 0)
     Close.ScaleType = Enum.ScaleType.Fit
+    Close.MouseButton1Click:Connect(function()
+        local Tween1 = game.TweenService:Create(Content, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Position = UDim2.new(-0.5, 0, 0.5, 0)
+        })
+        local Tween2 = game.TweenService:Create(shadow, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Position = UDim2.new(-0.5, 2, 0.5, 2)
+        })
+        Tween1:Play()
+        Tween2:Play()
+        Tween2.Completed:Connect(function()
+            _81asf91z9asf1:Destroy()
+            Request()
+        end)
+    end)
     
     Icon.Name = "Icon"
     Icon.Parent = Close
@@ -334,17 +348,6 @@ function Forums.new(newName)
     close.Image = "rbxassetid://3926305904"
     close.ImageRectOffset = Vector2.new(284, 4)
     close.ImageRectSize = Vector2.new(24, 24)
-    close.MouseButton1Click:Connect(function()
-        game.TweenService:Create(shadow, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            ImageTransparency = 1
-        }):Play()
-        wait()
-        game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0,0,0,0)
-        }):Play()
-        wait(1)
-        _81asf91z9asf1:Destroy()
-    end)
 
     containerHolder.Name = "containerHolder"
     containerHolder.Parent = Main
