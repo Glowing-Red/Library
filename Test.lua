@@ -1,4 +1,4 @@
-local Forums = {}--
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -476,7 +476,7 @@ function Forums.new(newName, Themesequence)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(255, 255, 255)
             Sample.ImageTransparency = 0.600
 
             UIGradient.Color = getgenv().ThemeSequence
@@ -638,7 +638,7 @@ function Forums.new(newName, Themesequence)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(255, 255, 255)
             Sample.ImageTransparency = 0.600
 
             circle1.Name = "circle1"
@@ -894,7 +894,7 @@ function Forums.new(newName, Themesequence)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(255, 255, 255)
             Sample.ImageTransparency = 0.600
 
             UIGradient.Color = getgenv().ThemeSequence
@@ -970,7 +970,7 @@ function Forums.new(newName, Themesequence)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(255, 255, 255)
             Sample.ImageTransparency = 0.600
 
             triangle.Name = "triangle"
@@ -1146,7 +1146,7 @@ function Forums.new(newName, Themesequence)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(255, 255, 255)
             Sample.ImageTransparency = 0.600
 
             currentKey.Name = "currentKey"
@@ -1375,7 +1375,7 @@ function Forums.new(newName, Themesequence)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(255, 255, 255)
             Sample.ImageTransparency = 0.600
 
             expand_more.Name = "expand_more"
