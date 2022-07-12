@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {}--
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -1230,7 +1230,7 @@ function Forums.new(newName, Themesequence)
                 end
             end
 
-            UserInputService.InputBegan:Connect(CheckKey)
+            game:GetService("UserInputService").InputBegan:Connect(CheckKey)
 
             function KeyFunctions:Update(newKey)
                 if currentKey.Text ~= newKey.Name then
