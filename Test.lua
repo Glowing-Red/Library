@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {} --
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -79,6 +79,7 @@ function Forums.new(newName)
     local shadow = Instance.new("ImageLabel")
     local Content = Instance.new("ImageLabel")
     local UIAspectRatioConstraintContent = Instance.new("UIAspectRatioConstraint")
+    local UISizeConstraintContent = Instance.new("UISizeConstraint")
     local Shadow = Instance.new("ImageLabel")
     local Close = Instance.new("ImageButton")
     local Icon = Instance.new("ImageLabel")
