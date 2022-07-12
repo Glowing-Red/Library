@@ -1,4 +1,4 @@
-local Forums = {} --
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -132,10 +132,6 @@ function Forums.new(newName)
     local UIGradientContent = Instance.new("UIGradient")
     local Main = Instance.new("Frame")
     local header = Instance.new("Frame")
-    local title = Instance.new("TextLabel")
-    local triangle1 = Instance.new("ImageLabel")
-    local triangle = Instance.new("ImageLabel")
-    local close = Instance.new("ImageButton")
     local containerHolder = Instance.new("Frame")
     local pages = Instance.new("Folder")
     local newPage = Instance.new("ScrollingFrame")
@@ -295,59 +291,6 @@ function Forums.new(newName)
     Main.Position = UDim2.new(0.075, 0,0.065, 0)
     Main.Size = UDim2.new(0, 486, 0, 283) --0, 486, 0, 283
     
-    header.Name = "header"
-    header.Parent = Main
-    header.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
-    header.BorderSizePixel = 0
-    header.ClipsDescendants = true
-    header.Size = UDim2.new(1.00000012, 0, -0.00295740133, 36)
-
-    title.Name = "title"
-    title.Parent = header
-    title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    title.BackgroundTransparency = 1.000
-    title.Position = UDim2.new(0.0164541025, 0, 0.170633629, 0)
-    title.Size = UDim2.new(0, 202, 0, 23)
-    title.ZIndex = 5
-    title.Font = Enum.Font.Gotham
-    title.Text = newName
-    title.TextColor3 = Color3.fromRGB(255, 255, 255)
-    title.TextSize = 14.000
-    title.TextXAlignment = Enum.TextXAlignment.Left
-
-    triangle1.Name = "triangle1"
-    triangle1.Parent = header
-    triangle1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    triangle1.BackgroundTransparency = 1.000
-    triangle1.BorderSizePixel = 0
-    triangle1.ClipsDescendants = true
-    triangle1.Position = UDim2.new(-0.302344143, 0, -0.483461976, 0)
-    triangle1.Size = UDim2.new(0, 283, 0, 81)
-    triangle1.Image = "http://www.roblox.com/asset/?id=6676220228"
-    triangle1.ImageColor3 = Color3.fromRGB(130, 51, 51)
-
-    triangle.Name = "triangle"
-    triangle.Parent = header
-    triangle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    triangle.BackgroundTransparency = 1.000
-    triangle.BorderSizePixel = 0
-    triangle.ClipsDescendants = true
-    triangle.Position = UDim2.new(0.824735582, 0, -0.483461976, 0)
-    triangle.Size = UDim2.new(0, 148, 0, 81)
-    triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-    triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
-
-    close.Name = "close"
-    close.Parent = header
-    close.BackgroundTransparency = 1.000
-    close.Position = UDim2.new(0.944999993, 0, 0.199000001, 0)
-    close.Size = UDim2.new(0, 20, 0, 20)
-    close.ZIndex = 2
-    close.AutoButtonColor = false
-    close.Image = "rbxassetid://3926305904"
-    close.ImageRectOffset = Vector2.new(284, 4)
-    close.ImageRectSize = Vector2.new(24, 24)
-
     containerHolder.Name = "containerHolder"
     containerHolder.Parent = Main
     containerHolder.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
