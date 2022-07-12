@@ -1,4 +1,4 @@
-local Forums = {}--
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -509,12 +509,12 @@ function Forums.new(newName, Themesequence)
             end)
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(180, 180, 180)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(225, 225, 225)
                 }):Play()
             end)
             function ButtonFunctions:Update(textB)
@@ -1260,7 +1260,6 @@ function Forums.new(newName, Themesequence)
             local expand_more = Instance.new("ImageButton")
             local UIGradient = Instance.new("UIGradient")
             local dropList = Instance.new("UIListLayout")
-            local UIGradient = Instance.new("UIGradient")
 
             dropFrame.Name = "dropFrame"
             dropFrame.Parent = sectionMain
@@ -1395,15 +1394,12 @@ function Forums.new(newName, Themesequence)
             dropList.HorizontalAlignment = Enum.HorizontalAlignment.Center
             dropList.SortOrder = Enum.SortOrder.LayoutOrder
             dropList.Padding = UDim.new(0, 5)
-            
-            UIGradient.Color = getgenv().ThemeSequence
-            UIGradient.Rotation = 180
-            UIGradient.Parent = dropFrame
 
             for i,v in next, list do
                 local dropOption = Instance.new("TextButton")
                 local btnText = Instance.new("TextLabel")
                 local Sample_2 = Instance.new("ImageLabel")
+                local UIGradient = Instance.new("UIGradient")
 
                 dropOption.Name = "dropOption"
                 dropOption.Parent = dropFrame
@@ -1441,6 +1437,10 @@ function Forums.new(newName, Themesequence)
                 Sample_2.Image = "http://www.roblox.com/asset/?id=4560909609"
                 Sample_2.ImageColor3 = Color3.fromRGB(71, 27, 27)
                 Sample_2.ImageTransparency = 0.600
+                
+                UIGradient.Color = getgenv().ThemeSequence
+                UIGradient.Rotation = 180
+                UIGradient.Parent = dropOption
 
                 local btn = dropOption
                 local sample = Sample_2
@@ -1611,12 +1611,17 @@ function Forums.new(newName, Themesequence)
         end
         function fElements:Seperator()
             local seperator = Instance.new("Frame")
+            local UIGradient = Instance.new("UIGradient")
 
             seperator.Name = "seperator"
             seperator.Parent = sectionMain
             seperator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             seperator.BorderColor3 = Color3.fromRGB(27, 27, 27)
             seperator.Size = UDim2.new(0, 474, 0, 2)
+
+            UIGradient.Color = getgenv().ThemeSequence
+            UIGradient.Rotation = 180
+            UIGradient.Parent = seperator
         end
         return fElements
     end
