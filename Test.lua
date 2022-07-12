@@ -467,7 +467,7 @@ function Forums.new(newName, Themesequence)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
             triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
-            triangle.Transparency = 0.7
+            triangle.ImageTransparency = 0.7
 
             Sample.Name = "Sample"
             Sample.Parent = btnFrame
@@ -586,7 +586,7 @@ function Forums.new(newName, Themesequence)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
             triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
-            triangle.Transparency = 0.7
+            triangle.ImageTransparency = 0.7
 
             checkedFramesFrame.Name = "checkedFramesFrame"
             checkedFramesFrame.Parent = toggleFrame
@@ -856,7 +856,7 @@ function Forums.new(newName, Themesequence)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
             triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
-            triangle.Transparency = 0.7
+            triangle.ImageTransparency = 0.7
 
             txtbox.Name = "txtbox"
             txtbox.Parent = textboxFrame
@@ -973,7 +973,7 @@ function Forums.new(newName, Themesequence)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
             triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
-            triangle.Transparency = 0.7
+            triangle.ImageTransparency = 0.7
 
             sliderText.Name = "sliderText"
             sliderText.Parent = sliderFrame
@@ -1122,7 +1122,7 @@ function Forums.new(newName, Themesequence)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
             triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
-            triangle.Transparency = 0.7
+            triangle.ImageTransparency = 0.7
 
             Sample.Name = "Sample"
             Sample.Parent = keybindFrame
@@ -1237,6 +1237,7 @@ function Forums.new(newName, Themesequence)
             local triangle = Instance.new("ImageLabel")
             local Sample = Instance.new("ImageLabel")
             local expand_more = Instance.new("ImageButton")
+            local UIGradient = Instance.new("UIGradient")
             local dropList = Instance.new("UIListLayout")
 
             dropFrame.Name = "dropFrame"
@@ -1340,7 +1341,7 @@ function Forums.new(newName, Themesequence)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
             triangle.ImageColor3 = Color3.fromRGB(0, 0, 0)
-            triangle.Transparency = 0.7
+            triangle.ImageTransparency = 0.7
 
             Sample.Name = "Sample"
             Sample.Parent = dropOpen
@@ -1359,9 +1360,13 @@ function Forums.new(newName, Themesequence)
             expand_more.Size = UDim2.new(0, 25, 0, 25)
             expand_more.ZIndex = 55
             expand_more.Image = "rbxassetid://3926305904"
-            expand_more.ImageColor3 = Color3.fromRGB(235, 93, 93)
+            expand_more.ImageColor3 = Color3.fromRGB(0, 0, 0)
             expand_more.ImageRectOffset = Vector2.new(564, 284)
             expand_more.ImageRectSize = Vector2.new(36, 36)
+            
+            UIGradient.Color = getgenv().ThemeSequence
+            UIGradient.Rotation = 180
+            UIGradient.Parent = headerContent
 
             dropList.Name = "dropList"
             dropList.Parent = dropFrame
@@ -1580,12 +1585,17 @@ function Forums.new(newName, Themesequence)
         end
         function fElements:Seperator()
             local seperator = Instance.new("Frame")
+            local UIGradient = Instance.new("UIGradient")
 
             seperator.Name = "seperator"
             seperator.Parent = sectionMain
             seperator.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
             seperator.BorderColor3 = Color3.fromRGB(27, 27, 27)
             seperator.Size = UDim2.new(0, 474, 0, 2)
+            
+            UIGradient.Color = getgenv().ThemeSequence
+            UIGradient.Rotation = 180
+            UIGradient.Parent = headerContent
         end
         return fElements
     end
