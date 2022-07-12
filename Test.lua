@@ -1,4 +1,3 @@
-
 local Forums = {}
 local minimized = false
 
@@ -303,7 +302,7 @@ function Forums.new(newName, Themesequence)
     containerHolder.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     containerHolder.BorderSizePixel = 0
     containerHolder.Position = UDim2.new(0, 0, 0.124251083, 0)
-    containerHolder.Size = UDim2.new(0, 485, 0, 220)
+    containerHolder.Size = UDim2.new(0, 485,0, 247)
 
     pages.Name = "pages"
     pages.Parent = containerHolder
@@ -327,8 +326,8 @@ function Forums.new(newName, Themesequence)
     newPage.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     newPage.BackgroundTransparency = 1.000
     newPage.BorderColor3 = Color3.fromRGB(27, 27, 27)
-    newPage.Position = UDim2.new(-0.148, 0, 0, 0)
-    newPage.Size = UDim2.new(1.278, 0, 1.279, 0)
+    newPage.Position = UDim2.new(-0.148, 0,0, 0)
+    newPage.Size = UDim2.new(1.278, 0,1.279, 0)
     newPage.ScrollBarThickness = 3
     newPage.ScrollBarImageColor3 = Color3.fromRGB(193, 76, 76)
     sectionList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
