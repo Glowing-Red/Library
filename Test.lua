@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {}--
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -116,7 +116,7 @@ function Forums.new(newName, Themesequence)
     getgenv().libName = newName
     newName = newName or "forum.robloxscripts.com"
     if Themesequence == nil then
-        --ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+        ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
     end
     getgenv().ThemeSequence = Themesequence
 
@@ -427,10 +427,11 @@ function Forums.new(newName, Themesequence)
             local btnText = Instance.new("TextLabel")
             local triangle = Instance.new("ImageLabel")
             local Sample = Instance.new("ImageLabel")
+            local UIGradient = Instance.new("UIGradient")
 
             btnFrame.Name = "btnFrame"
             btnFrame.Parent = sectionMain
-            btnFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            btnFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             btnFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             btnFrame.ClipsDescendants = true
             btnFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -477,6 +478,10 @@ function Forums.new(newName, Themesequence)
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
             Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
             Sample.ImageTransparency = 0.600
+
+            UIGradient.Color = getgenv().ThemeSequence
+            UIGradient.Rotation = 180
+            UIGradient.Parent = btnFrame
 
             local ms = game.Players.LocalPlayer:GetMouse()
 
@@ -817,10 +822,11 @@ function Forums.new(newName, Themesequence)
             local txtbox = Instance.new("Frame")
             local TextBox = Instance.new("TextBox")
             local Sample = Instance.new("ImageLabel")
+            local UIGradient = Instance.new("UIGradient")
 
             textboxFrame.Name = "textboxFrame"
             textboxFrame.Parent = sectionMain
-            textboxFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            textboxFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             textboxFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             textboxFrame.ClipsDescendants = true
             textboxFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -891,6 +897,10 @@ function Forums.new(newName, Themesequence)
             Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
             Sample.ImageTransparency = 0.600
 
+            UIGradient.Color = getgenv().ThemeSequence
+            UIGradient.Rotation = 180
+            UIGradient.Parent = textboxFrame
+
             local btn = textboxFrame
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
@@ -938,10 +948,11 @@ function Forums.new(newName, Themesequence)
             local SliderButton = Instance.new("TextButton")
             local sliderDrag = Instance.new("Frame")
             local UIListLayout = Instance.new("UIListLayout")
+            local UIGradient = Instance.new("UIGradient")
 
             sliderFrame.Name = "sliderFrame"
             sliderFrame.Parent = sectionMain
-            sliderFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            sliderFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             sliderFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             sliderFrame.ClipsDescendants = true
             sliderFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -1030,6 +1041,10 @@ function Forums.new(newName, Themesequence)
             local uis = game:GetService("UserInputService")
             local mouse = game:GetService("Players").LocalPlayer:GetMouse()
             UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+            
+            UIGradient.Color = getgenv().ThemeSequence
+            UIGradient.Rotation = 180
+            UIGradient.Parent = sliderFrame
 
             SliderButton.MouseButton1Down:Connect(function()
                 Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 215) * sliderDrag.AbsoluteSize.X) + tonumber(minvalue)) or 0
@@ -1082,10 +1097,11 @@ function Forums.new(newName, Themesequence)
             local triangle = Instance.new("ImageLabel")
             local Sample = Instance.new("ImageLabel")
             local currentKey = Instance.new("TextLabel")
+            local UIGradient = Instance.new("UIGradient")
 
             keybindFrame.Name = "keybindFrame"
             keybindFrame.Parent = sectionMain
-            keybindFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            keybindFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             keybindFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             keybindFrame.ClipsDescendants = true
             keybindFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -1146,6 +1162,11 @@ function Forums.new(newName, Themesequence)
             currentKey.TextColor3 = Color3.fromRGB(255, 255, 255)
             currentKey.TextSize = 14.000
             currentKey.TextXAlignment = Enum.TextXAlignment.Right
+            
+            UIGradient.Color = getgenv().ThemeSequence
+            UIGradient.Rotation = 180
+            UIGradient.Parent = keybindFrame
+            
             local ms = mouse
 
             local btn = keybindFrame
@@ -1239,10 +1260,11 @@ function Forums.new(newName, Themesequence)
             local expand_more = Instance.new("ImageButton")
             local UIGradient = Instance.new("UIGradient")
             local dropList = Instance.new("UIListLayout")
+            local UIGradient = Instance.new("UIGradient")
 
             dropFrame.Name = "dropFrame"
             dropFrame.Parent = sectionMain
-            dropFrame.BackgroundColor3 = Color3.fromRGB(84, 33, 33)
+            dropFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             dropFrame.BorderColor3 = Color3.fromRGB(33, 33, 33)
             dropFrame.ClipsDescendants = true
             dropFrame.Position = UDim2.new(0.0113402065, 0, 0.593175828, 0)
@@ -1373,6 +1395,10 @@ function Forums.new(newName, Themesequence)
             dropList.HorizontalAlignment = Enum.HorizontalAlignment.Center
             dropList.SortOrder = Enum.SortOrder.LayoutOrder
             dropList.Padding = UDim.new(0, 5)
+            
+            UIGradient.Color = getgenv().ThemeSequence
+            UIGradient.Rotation = 180
+            UIGradient.Parent = dropFrame
 
             for i,v in next, list do
                 local dropOption = Instance.new("TextButton")
@@ -1585,17 +1611,12 @@ function Forums.new(newName, Themesequence)
         end
         function fElements:Seperator()
             local seperator = Instance.new("Frame")
-            local UIGradient = Instance.new("UIGradient")
 
             seperator.Name = "seperator"
             seperator.Parent = sectionMain
-            seperator.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            seperator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             seperator.BorderColor3 = Color3.fromRGB(27, 27, 27)
             seperator.Size = UDim2.new(0, 474, 0, 2)
-            
-            UIGradient.Color = getgenv().ThemeSequence
-            UIGradient.Rotation = 180
-            UIGradient.Parent = seperator
         end
         return fElements
     end
