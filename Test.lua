@@ -1,4 +1,4 @@
-local Forums = {}--
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -1187,9 +1187,9 @@ function Forums.new(newName, Themesequence)
                     }):Play()
                     wait(0.14)
                     currentKey.Text = a.KeyCode.Name
-                    print(oldkey)
+                    print(oldkey.Name)
                     oldKey = a.KeyCode.Name;
-                    print(oldkey)
+                    print(oldkey.Name)
                     game.TweenService:Create(currentKey, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
                         TextTransparency = 0
                     }):Play()
@@ -1223,7 +1223,7 @@ function Forums.new(newName, Themesequence)
             end)
 
             local function IsOldKey()
-                return UserInputService:IsKeyDown(Enum.KeyCode[oldKey])
+                return UserInputService:IsKeyDown(Enum.KeyCode[oldKey.Name])
             end
 
             local function CheckKey(input, gameProcessedEvent)
