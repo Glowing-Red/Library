@@ -1,4 +1,4 @@
-local Forums = {}--
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -533,10 +533,11 @@ function Forums.new(newName)
             local UIListLayout_3 = Instance.new("UIListLayout")
             local circle = Instance.new("Frame")
             local UICorner = Instance.new("UICorner")
+            local UIGradient = Instance.new("UIGradient")
 
             toggleFrame.Name = "toggleFrame"
             toggleFrame.Parent = sectionMain
-            toggleFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            toggleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             toggleFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             toggleFrame.ClipsDescendants = true
             toggleFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -641,6 +642,10 @@ function Forums.new(newName)
 
             UICorner.CornerRadius = UDim.new(0, 99)
             UICorner.Parent = circle
+
+            UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
+            UIGradient.Rotation = 180
+            UIGradient.Parent = toggleFrame
 
             local ms = game.Players.LocalPlayer:GetMouse()
 
@@ -763,12 +768,12 @@ function Forums.new(newName)
             end)
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(155, 155, 155)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 }):Play()
             end)
             function ToggleFunctions:Update(textT)
