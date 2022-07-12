@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {}--
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -644,7 +644,7 @@ function Forums.new(newName)
 
             local ms = game.Players.LocalPlayer:GetMouse()
 
-            local btn = CheckButton
+            local btn = toggleFrame
             local sample = btn:WaitForChild('Sample')
 
             btn.MouseButton1Click:Connect(function()
