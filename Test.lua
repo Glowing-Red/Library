@@ -1,4 +1,4 @@
-local Forums = {}--
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -406,7 +406,7 @@ function Forums.new(newName, Themesequence)
         end)
         btn.MouseEnter:Connect(function()
             game.TweenService:Create(sectionTitle, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                TextColor3 = Color3.fromRGB(203, 203, 203)
+                TextColor3 = Color3.fromRGB(205, 205, 205)
             }):Play()
         end)
 
@@ -788,7 +788,7 @@ function Forums.new(newName, Themesequence)
             end)
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+                    BackgroundColor3 = Color3.fromRGB(205, 205, 205)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
@@ -904,12 +904,12 @@ function Forums.new(newName, Themesequence)
             local btn = textboxFrame
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(205, 205, 205)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 }):Play()
             end)
             TextBox.FocusLost:Connect(function(EnterPressed)
@@ -1077,12 +1077,12 @@ function Forums.new(newName, Themesequence)
             local btn = sliderFrame
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(205, 205, 205)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 }):Play()
             end)
         end
@@ -1212,12 +1212,12 @@ function Forums.new(newName, Themesequence)
             end)
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(205, 205, 205)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 }):Play()
             end)
 
@@ -1479,12 +1479,12 @@ function Forums.new(newName, Themesequence)
 
                 btn.MouseEnter:Connect(function()
                     game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                        BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                        BackgroundColor3 = Color3.fromRGB(205, 205, 205)
                     }):Play()
                 end)
                 btn.MouseLeave:Connect(function()
                     game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                        BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                     }):Play()
                 end)
             end
@@ -1575,12 +1575,12 @@ function Forums.new(newName, Themesequence)
 
                     btn.MouseEnter:Connect(function()
                         game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                            BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                            BackgroundColor3 = Color3.fromRGB(205, 205, 205)
                         }):Play()
                     end)
                     btn.MouseLeave:Connect(function()
                         game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                            BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                            BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                         }):Play()
                     end)
                 end
