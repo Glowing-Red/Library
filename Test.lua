@@ -1,4 +1,4 @@
-local Forums = {} --
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -216,7 +216,6 @@ function Forums.new(newName)
         Tween2:Play()
         Tween2.Completed:Connect(function()
             _81asf91z9asf1:Destroy()
-            Request()
         end)
     end)
     
