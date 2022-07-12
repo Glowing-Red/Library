@@ -1,4 +1,4 @@
-local Forums = {} --
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -78,8 +78,8 @@ function Forums.new(newName)
     local _81asf91z9asf1 = Instance.new("ScreenGui")
     local shadow = Instance.new("ImageLabel")
     local Content = Instance.new("ImageLabel")
-    local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-    local UISizeConstraint = Instance.new("UISizeConstraint")
+    local UIAspectRatioConstraintContent = Instance.new("UIAspectRatioConstraint")
+    local UISizeConstraintContent = Instance.new("UISizeConstraint")
     local Shadow = Instance.new("ImageLabel")
     local Close = Instance.new("ImageButton")
     local Icon = Instance.new("ImageLabel")
@@ -133,12 +133,12 @@ function Forums.new(newName)
     Content.ImageColor3 = Color3.fromRGB(107, 107, 107)
     Content.ScaleType = Enum.ScaleType.Fit
     
-    UIAspectRatioConstraint.Parent = Content
-    UIAspectRatioConstraint.AspectRatio = 1.994
+    UIAspectRatioConstraintContent.Parent = Content
+    UIAspectRatioConstraintContent.AspectRatio = 1.994
     
-    UISizeConstraint.Parent = Content
-    UISizeConstraint.MaxSize = Vector2.new(700, INF)
-    UISizeConstraint.MinSize = Vector2.new(0, 250)
+    UISizeConstraintContent.Parent = Content
+    UISizeConstraintContent.MaxSize = Vector2.new(700, INF)
+    UISizeConstraintContent.MinSize = Vector2.new(0, 250)
     
     Shadow.Name = "shadow"
     Shadow.Parent = Content
