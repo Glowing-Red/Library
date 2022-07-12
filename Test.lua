@@ -1,4 +1,4 @@
-local Forums = {}--
+local Forums = {}
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -1087,7 +1087,7 @@ function Forums.new(newName, Themesequence)
         end
         function fElements:NewKeybind(title, currentKey, callback)
             title = title or ""
-            local oldKey = currentKey.Name
+            local oldKey = currentKey
             callback = callback or function() end
             local KeyFunctions = {}
             local mouse = game:GetService("Players").LocalPlayer:GetMouse()
@@ -1219,12 +1219,9 @@ function Forums.new(newName, Themesequence)
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 }):Play()
             end)
-
-            game:GetService("UserInputService").InputBegan:connect(function(current, ok) 
-                if not ok then 
-                    if current.KeyCode.Name == oldKey then 
-                        pcall(callback)
-                    end
+            game.UserInputService.InputBegan:Connect(function(key)
+                if key.KeyCode == oldKey then
+                    pcall(callback)
                 end
             end)
 
@@ -1243,6 +1240,7 @@ function Forums.new(newName, Themesequence)
             end
             return KeyFunctions
         end
+        
         function fElements:NewDropdown(title, list, callback)
             local DropdownFunc = {}
             title = title or "nil"
