@@ -223,7 +223,7 @@ function Forums.new(newName)
     titleContent.Position = UDim2.new(0.0680000037, 0, 0.400000006, 0)
     titleContent.Size = UDim2.new(0.458673835, 0, 0.479999989, 0)
     titleContent.Font = Enum.Font.FredokaOne
-    titleContent.Text = "title"
+    titleContent.Text = newName
     titleContent.TextColor3 = Color3.fromRGB(255, 255, 255)
     titleContent.TextScaled = true
     titleContent.TextSize = 14.000
