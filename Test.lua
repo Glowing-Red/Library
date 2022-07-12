@@ -1,4 +1,4 @@
-local Forums = {}
+local Forums = {} --
 local minimized = false
 
 local tween = game:GetService("TweenService")
@@ -515,7 +515,7 @@ function Forums.new(newName)
             return ButtonFunctions
         end
 
-        function fElements:NewToggle(title, callback)
+        function fElements:NewToggle(title, status, callback)
             title = title or "New Toggle"
             callback = callback or function() end
             local ToggleFunctions = {}
@@ -665,7 +665,28 @@ function Forums.new(newName)
                 end
                 c:Destroy()
             end)
-            local toggled = false
+            local toggled = status
+            if toggled then
+                game.TweenService:Create(checked, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                    Size = UDim2.new(0,20,0,20)
+                }):Play()
+                game.TweenService:Create(unchecked, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                    Size = UDim2.new(0,20,0,20)
+                }):Play()
+                wait(0.08)
+                game.TweenService:Create(checked, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                    Size = UDim2.new(0,24,0,24)
+                }):Play()
+                game.TweenService:Create(unchecked, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                    Size = UDim2.new(0,24,0,24)
+                }):Play()
+                game.TweenService:Create(checked, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                    ImageTransparency = 0
+                }):Play()
+                game.TweenService:Create(unchecked, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+                    ImageTransparency = 1
+                }):Play()
+            end
             btn.MouseButton1Click:Connect(function()
                 if toggled then
                     game.TweenService:Create(checked, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
