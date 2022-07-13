@@ -1502,6 +1502,7 @@ function Forums.new(newName, Themesequence)
                     local dropOption = Instance.new("TextButton")
                     local btnText = Instance.new("TextLabel")
                     local Sample_2 = Instance.new("ImageLabel")
+                    local UIGradient = Instance.new("UIGradient")
 
                     dropOption.Name = "dropOption"
                     dropOption.Parent = dropFrame
@@ -1539,6 +1540,10 @@ function Forums.new(newName, Themesequence)
                     Sample_2.Image = "http://www.roblox.com/asset/?id=4560909609"
                     Sample_2.ImageColor3 = Color3.fromRGB(71, 27, 27)
                     Sample_2.ImageTransparency = 0.600
+
+                    UIGradient.Color = getgenv().ThemeSequence
+                    UIGradient.Rotation = 180
+                    UIGradient.Parent = dropOption
 
                     local btn = dropOption
                     local sample = Sample_2
