@@ -1,4 +1,3 @@
-
 local Forums = {}
 local minimized = false
 
@@ -1507,7 +1506,7 @@ function Forums.new(newName, Themesequence)
 
                     dropOption.Name = "dropOption"
                     dropOption.Parent = dropFrame
-                    dropOption.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    dropOption.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                     dropOption.BorderColor3 = Color3.fromRGB(30, 30, 30)
                     dropOption.ClipsDescendants = true
                     dropOption.Position = UDim2.new(0, 0, 0.25179857, 0)
