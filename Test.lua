@@ -330,8 +330,8 @@ function Forums.new(newName, Themesequence)
     newPage.BorderColor3 = Color3.fromRGB(27, 27, 27)
     newPage.Position = UDim2.new(-0.148, 0,0, 0)
     newPage.Size = UDim2.new(1.278, 0,1.279, 0)
-    newPage.ScrollBarThickness = 3
-    newPage.ScrollBarImageColor3 = Color3.fromRGB(193, 76, 76)
+    newPage.ScrollBarThickness = 0
+    newPage.ScrollBarImageColor3 = Color3.fromRGB(20, 20, 20)
     sectionList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
         newPage.CanvasSize = UDim2.new(0,0,0,sectionList.AbsoluteContentSize.Y) 
     end)
@@ -1449,7 +1449,7 @@ function Forums.new(newName, Themesequence)
                 local btn = dropOption
                 local sample = Sample_2
                 btn.MouseButton1Click:Connect(function()
-                    dropInf.Text = title..v
+                    dropInf.Text = title..tostring(v)
                     callback(v)
                     game.TweenService:Create(dropFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
                         Size = UDim2.new(0,474,0,32)
@@ -1545,7 +1545,7 @@ function Forums.new(newName, Themesequence)
                     local mouse = game:GetService("Players").LocalPlayer:GetMouse()
                     local ms = mouse
                     btn.MouseButton1Click:Connect(function()
-                        dropInf.Text = title..v
+                        dropInf.Text = title..tostring(v)
                         callback(v)
                         game.TweenService:Create(dropFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
                             Size = UDim2.new(0,474,0,32)
