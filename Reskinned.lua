@@ -1,3 +1,4 @@
+
 local Forums = {}
 local minimized = false
 
@@ -104,20 +105,24 @@ function Forums:UIMinimize()
         end
     end
 
-getgenv().ThemeSequence = nil
-
-function Forums.new(newName, Themesequence)
+function Forums.new(newName, Themesequence, Poson, Posow)
     for i,v in pairs(game.CoreGui:GetChildren()) do
 	if v.Name == newName then
            v:Destroy()             
         end
     end
-    
+
     getgenv().libName = newName
     newName = newName or "forum.robloxscripts.com"
 
     Themesequence = Themesequence or ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 175, 255)), ColorSequenceKeypoint.new(0.10, Color3.fromRGB(51, 113, 255)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(51, 52, 255)), ColorSequenceKeypoint.new(0.30, Color3.fromRGB(110, 51, 255)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(171, 51, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(232, 51, 255)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(255, 51, 215)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(255, 51, 154)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(255, 51, 93)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 69, 51)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 130, 51))}
     getgenv().ThemeSequence = Themesequence
+
+    Poson = Poson or "{0.5, 0}, {0.5, 0}"
+    getgenv().Poson = Poson
+
+    Posow = Posow or "{0.5, 2}, {0.5, 2}"
+    getgenv().Posow = Posow
 
     local _81asf91z9asf1 = Instance.new("ScreenGui")
     local shadow = Instance.new("ImageLabel")
@@ -161,7 +166,8 @@ function Forums.new(newName, Themesequence)
     shadow.AnchorPoint = Vector2.new(0.5, 0.5)
     shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     shadow.BackgroundTransparency = 1.000
-    shadow.Position = UDim2.new(0.5, 2, 0.5, 2)
+    local xScale, xOffset, yScale, yOffset = string.match(getgenv().Posow, "^{(.-), (.-)}, {(.-), (.+)}")
+    shadow.Position = UDim2.new(xScale, xOffset, yScale, yOffset)
     shadow.Size = UDim2.new(0.800000012, 0, 0.5, 0)
     shadow.ZIndex = 0
     shadow.Image = "rbxassetid://8993270989"
@@ -171,7 +177,8 @@ function Forums.new(newName, Themesequence)
     Content.AnchorPoint = Vector2.new(0.5, 0.5)
     Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Content.BackgroundTransparency = 1.000
-    Content.Position = UDim2.new(0.5, 0, 0.5, 0)
+    local xScale, xOffset, yScale, yOffset = string.match(getgenv().Poson, "^{(.-), (.-)}, {(.-), (.+)}")
+    Content.Position = UDim2.new(xScale, xOffset, yScale, yOffset)
     Content.Size = UDim2.new(0.800000012, 0, 0.5, 0)
     Content.Image = "rbxassetid://8942119552"
     Content.ImageColor3 = Color3.fromRGB(107, 107, 107)
