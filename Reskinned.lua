@@ -1,4 +1,3 @@
-
 local Forums = {}
 local minimized = false
 
@@ -119,10 +118,10 @@ function Forums.new(newName, Themesequence, Poson, Posow)
     getgenv().ThemeSequence = Themesequence
 
     Poson = Poson or "{0.5, 0}, {0.5, 0}"
-    getgenv().Poson = Poson
+    --getgenv().Poson = Poson
 
     Posow = Posow or "{0.5, 2}, {0.5, 2}"
-    getgenv().Posow = Posow
+    --getgenv().Posow = Posow
 
     local _81asf91z9asf1 = Instance.new("ScreenGui")
     local shadow = Instance.new("ImageLabel")
@@ -166,7 +165,7 @@ function Forums.new(newName, Themesequence, Poson, Posow)
     shadow.AnchorPoint = Vector2.new(0.5, 0.5)
     shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     shadow.BackgroundTransparency = 1.000
-    local xScale, xOffset, yScale, yOffset = string.match(getgenv().Posow, "^{(.-), (.-)}, {(.-), (.+)}")
+    local xScale, xOffset, yScale, yOffset = string.match(Posow, "^{(.-), (.-)}, {(.-), (.+)}")
     shadow.Position = UDim2.new(xScale, xOffset, yScale, yOffset)
     shadow.Size = UDim2.new(0.800000012, 0, 0.5, 0)
     shadow.ZIndex = 0
@@ -177,7 +176,7 @@ function Forums.new(newName, Themesequence, Poson, Posow)
     Content.AnchorPoint = Vector2.new(0.5, 0.5)
     Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Content.BackgroundTransparency = 1.000
-    local xScale, xOffset, yScale, yOffset = string.match(getgenv().Poson, "^{(.-), (.-)}, {(.-), (.+)}")
+    local xScale, xOffset, yScale, yOffset = string.match(Poson, "^{(.-), (.-)}, {(.-), (.+)}")
     Content.Position = UDim2.new(xScale, xOffset, yScale, yOffset)
     Content.Size = UDim2.new(0.800000012, 0, 0.5, 0)
     Content.Image = "rbxassetid://8942119552"
