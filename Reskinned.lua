@@ -118,10 +118,8 @@ function Forums.new(newName, Themesequence, Poson, Posow)
     getgenv().ThemeSequence = Themesequence
 
     Poson = Poson or "{0.5, 0}, {0.5, 0}"
-    --getgenv().Poson = Poson
 
     Posow = Posow or "{0.5, 2}, {0.5, 2}"
-    --getgenv().Posow = Posow
 
     local _81asf91z9asf1 = Instance.new("ScreenGui")
     local shadow = Instance.new("ImageLabel")
