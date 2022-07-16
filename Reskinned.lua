@@ -846,7 +846,7 @@ function Forums.new(newName, Themesequence, Poson, Posow)
 
             txtboxText.Name = "txtboxText"
             txtboxText.Parent = textboxFrame
-            txtboxText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            txtboxText.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
             txtboxText.BackgroundTransparency = 1.000
             txtboxText.Position = UDim2.new(0.0177406278, 0, 0.199999809, 0)
             txtboxText.Size = UDim2.new(0, 175, 0, 18)
