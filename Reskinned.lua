@@ -1,4 +1,3 @@
-
 local Forums = {}
 local minimized = false
 
@@ -846,7 +845,7 @@ function Forums.new(newName, Themesequence, Poson, Posow)
 
             txtboxText.Name = "txtboxText"
             txtboxText.Parent = textboxFrame
-            txtboxText.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+            txtboxText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             txtboxText.BackgroundTransparency = 1.000
             txtboxText.Position = UDim2.new(0.0177406278, 0, 0.199999809, 0)
             txtboxText.Size = UDim2.new(0, 175, 0, 18)
@@ -874,14 +873,14 @@ function Forums.new(newName, Themesequence, Poson, Posow)
             txtbox.Parent = textboxFrame
             txtbox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
             txtbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-            txtbox.Transparency = 0.7
+            txtbox.BackgroundTransparency = 0.7
             txtbox.Position = UDim2.new(0.549000025, 0, 0.172999993, 0)
             txtbox.Size = UDim2.new(0, 176, 0, 20)
 
             TextBox.Parent = txtbox
             TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
             TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-            TextBox.Transparency = 1
+            TextBox.BackgroundTransparency = 1
             TextBox.ClipsDescendants = true
             TextBox.Position = UDim2.new(0.0340909101, 0, 0, 0)
             TextBox.Size = UDim2.new(0, 149, 0, 20)
