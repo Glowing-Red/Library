@@ -1,3 +1,4 @@
+
 local Forums = {}
 local minimized = false
 
