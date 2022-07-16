@@ -871,14 +871,16 @@ function Forums.new(newName, Themesequence, Poson, Posow)
 
             txtbox.Name = "txtbox"
             txtbox.Parent = textboxFrame
-            txtbox.BackgroundColor3 = Color3.fromRGB(109, 43, 43)
-            txtbox.BorderColor3 = Color3.fromRGB(109, 43, 43)
+            txtbox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+            txtbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+            txtbox.Transparency = 0.7
             txtbox.Position = UDim2.new(0.549000025, 0, 0.172999993, 0)
             txtbox.Size = UDim2.new(0, 176, 0, 20)
 
             TextBox.Parent = txtbox
-            TextBox.BackgroundColor3 = Color3.fromRGB(109, 43, 43)
-            TextBox.BorderColor3 = Color3.fromRGB(109, 43, 43)
+            TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+            TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+            TextBox.Transparency = 1
             TextBox.ClipsDescendants = true
             TextBox.Position = UDim2.new(0.0340909101, 0, 0, 0)
             TextBox.Size = UDim2.new(0, 149, 0, 20)
@@ -886,7 +888,7 @@ function Forums.new(newName, Themesequence, Poson, Posow)
             TextBox.ClearTextOnFocus = false
             TextBox.Font = Enum.Font.FredokaOne
             TextBox.TextStrokeTransparency = 0.000
-            TextBox.PlaceholderColor3 = Color3.fromRGB(255, 101, 101)
+            TextBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
             TextBox.PlaceholderText = "Type Here"
             TextBox.Text = ""
             TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
